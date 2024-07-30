@@ -162,9 +162,9 @@ http://localhost:3000/
 
 ***Update Event***
 
-* ***Headers:*** *Authorization:* Bearer jwt_token_here
-
 > PUT/events/:id
+
+* ***Headers:*** *Authorization:* Bearer jwt_token_here
 
 * ***Request:*** (Include only the fields you want to update)
 
