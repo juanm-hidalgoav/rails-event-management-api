@@ -67,12 +67,14 @@ http://localhost:3000/
 
 ### Request & Response Examples
 
-***Register***
+***Register*** 
+
+> POST /register
 
 * ***Request:***
 
 ```json
-POST /register
+
 {
   "name": "John Doe",
   "email": "john@example.com",
@@ -98,10 +100,11 @@ POST /register
 
 ***Login***
 
+> POST /login
+
 * ***Request:***
 
 ```json
-POST /login
 {
   "email": "john@example.com",
   "password": "password"
@@ -118,10 +121,13 @@ POST /login
 
 ***Create Event***
 
+> POST /events
+
+* ***Headers:*** *Authorization:* Bearer jwt_token_here
+
 * ***Request:***
 
 ```json
-POST /events
 {
   "name": "New Event",
   "description": "Event description",
@@ -141,6 +147,39 @@ POST /events
   "user_id": 1
 }
 ```
+
+***Get All Events***
+
+> GET /events
+
+* ***Headers:*** *Authorization:* Bearer jwt_token_here
+
+***Get Event by ID***
+
+> GET /events/:id
+
+* ***Headers:*** *Authorization:* Bearer jwt_token_here
+
+***Update Event***
+
+* ***Headers:*** *Authorization:* Bearer jwt_token_here
+
+> PUT/events/:id
+
+* ***Request:*** (Include only the fields you want to update)
+
+```json
+{
+  "name": "Event 605",
+  "date": "2024-09-11T15:30:00.000Z",
+}
+```
+
+***Delete Event***
+
+> DELETE /events/:id
+
+* ***Headers:*** *Authorization:* Bearer jwt_token_here
 
 ### Testing
 
